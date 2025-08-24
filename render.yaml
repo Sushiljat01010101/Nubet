@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: pirate-osint-bot
+    env: python
+    buildCommand: pip install -r dependencies.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: PIRATE_OSINT_API_KEY
+        value: kQ5hlafjxfgJTJ5d
+      - key: PIRATE_OSINT_BASE_URL
+        value: http://pirate-osint.onrender.com/api
+      - key: RATE_LIMIT_REQUESTS
+        value: 5
+      - key: RATE_LIMIT_WINDOW
+        value: 60
+      - key: LOG_LEVEL
+        value: INFO
+      - key: API_TIMEOUT
+        value: 30
